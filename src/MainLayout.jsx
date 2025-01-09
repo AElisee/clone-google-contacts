@@ -7,9 +7,13 @@ const MainLayout = () => {
   return (
     <div>
       <TopBar />
-      <div className="flex gap-5 m-0 ">
-        <SideBar />
-        <Outlet />
+      <div className="flex gap-4 ">
+        <div className="w-[23vw]">
+          <SideBar />
+        </div>
+        <div className="w-[77vw] pr-2">
+          <Outlet />
+        </div>
       </div>
     </div>
   );

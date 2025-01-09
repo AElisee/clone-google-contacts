@@ -10,10 +10,12 @@ import { MdHandyman } from "react-icons/md";
 import { FiDownload } from "react-icons/fi";
 import { BsTrash3Fill } from "react-icons/bs";
 import IconButton from "@mui/material/IconButton";
+import { dataTable } from "./../../data/rows.js";
+const rows = dataTable.sort((a, b) => a.name.localeCompare(b.name));
 const SideBar = () => {
   return (
-    <div className="w-[23vw] min-h-screen p-3 px-4 pt-0 bg-white">
-      <div className="sticky top-[70px]  bg-white w-[23vw] py-5">
+    <div className="min-h-screen p-3 px-4 pt-0  ">
+      <div className="sticky top-[70px]  bg-gray-50 w-full py-5">
         <div className="flex gap-3 p-3 py-4 pr-6 bg-sky-200 rounded-xl max-w-max items-center">
           <GoPlus className="w-6 h-6 font-semibold" />
           <span>Créer un contact</span>
@@ -34,7 +36,7 @@ const SideBar = () => {
                 <span>Contacts</span>
               </div>
               <span className="text-sm text-slate-400 font-semibold">
-                {126}
+                {rows.length}
               </span>
             </NavLink>
           </li>
@@ -94,7 +96,7 @@ const SideBar = () => {
             </li>
             <li className="flex">
               <NavLink
-                to="/"
+                to="/import"
                 className={`${(isActive) =>
                   isActive
                     ? "active"

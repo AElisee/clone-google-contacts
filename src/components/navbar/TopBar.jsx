@@ -8,9 +8,10 @@ import { IoHelpCircleOutline } from "react-icons/io5";
 import { RiSettings3Line } from "react-icons/ri";
 import { IoApps } from "react-icons/io5";
 import { IoMenuSharp } from "react-icons/io5";
-
+import { FaUserGroup } from "react-icons/fa6";
+import { useNavigate } from "react-router";
 const TopBar = () => {
-  const [searchFocus, setFearchFocus] = useState(false);
+  const navigate = useNavigate();
 
   const AccountTitle = () => {
     return (
@@ -23,15 +24,21 @@ const TopBar = () => {
   };
 
   return (
-    <div className="h-[70px] p-3 px-4 flex gap-3 sticky top-0 left-0 bg-white z-30">
+    <div className="h-[70px] p-3 px-4 flex gap-3 sticky top-0 left-0 z-30">
       <div className="w-[23%] flex items-center py-2 ">
         <Tooltip title="Menu principal">
           <IconButton className="w-[45px] h-[45px] rounded-full">
             <IoMenuSharp />
           </IconButton>
         </Tooltip>
-        <div>
-          <p className="text-2xl font-normal text-gray-600">Conatcts</p>
+        <div className="flex gap-3 items-center">
+          <FaUserGroup className="h-8 w-8 text-blue-800" />
+          <p
+            className="text-2xl font-normal text-gray-600"
+            onClick={() => navigate("/")}
+          >
+            Conatcts
+          </p>
         </div>
       </div>
       <div className="w-[55%] bg-neutral-100 flex p-2 rounded-lg shadow-sm gap-3 items-center ">
