@@ -1,9 +1,10 @@
 import React from "react";
+import Contacts from "./Contacts.jsx";
 
 const HomePage = () => {
   return (
     <div>
-      <p>home page</p>
+      <Contacts />
     </div>
   );
 };

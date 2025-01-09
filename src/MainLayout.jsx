@@ -7,7 +7,7 @@ const MainLayout = () => {
   return (
     <div>
       <TopBar />
-      <div className="flex">
+      <div className="flex gap-5 m-0 ">
         <SideBar />
         <Outlet />
       </div>
